@@ -1,0 +1,377 @@
+.conateiner_formulario_registro{
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.nome_registro{
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #131c23;
+
+    cursor: default;
+}
+
+.conteiner_input_nome_registro{
+    max-width: 342px;
+    width: 100%;
+    height: 44px;
+
+    border: 1px solid #dee6e9;
+    border-radius: 12px;
+
+    padding: 12px 12px;
+
+    background-color: #f8fdfc;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    transition: all 0.2s ease;
+}
+
+.conteiner_input_nome_registro:focus-within {
+    border-color: #22c55e;
+}
+
+.icone_usuario_registro{
+    font-size: 20px;
+
+    color: #59656e;
+}
+
+.input_nome_registro{
+    width: 100%;
+    height: 42px;
+
+    background-color: #f8fdfc;
+
+    border: 0;
+    outline: 0;
+
+    font-size: 14px;
+}
+
+.conateiner_formulario_registro{
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.email_registro{
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #131c23;
+
+    cursor: default;
+}
+
+.conteiner_input_email_registro{
+    max-width: 342px;
+    width: 100%;
+    height: 44px;
+
+    border: 1px solid #dee6e9;
+    border-radius: 12px;
+
+    padding: 12px 12px;
+
+    background-color: #f8fdfc;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    transition: all 0.2s ease;
+}
+
+.conteiner_input_email_registro:focus-within {
+    border-color: #22c55e;
+}
+
+.icone_email_registro{
+    font-size: 20px;
+
+    color: #59656e;
+}
+
+.input_email_registro{
+    width: 100%;
+    height: 42px;
+
+    background-color: #f8fdfc;
+
+    border: 0;
+    outline: 0;
+
+    font-size: 14px;
+}
+
+.senha_registro{
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #131c23;
+
+    cursor: default;
+}
+
+.conteiner_input_senha_registro{
+    max-width: 342px;
+    width: 100%;
+    height: 44px;
+
+    border: 1px solid #dee6e9;
+    border-radius: 12px;
+
+    padding: 12px 12px;
+
+    background-color: #f8fdfc;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    transition: all 0.2s ease;
+}
+
+.conteiner_input_senha_registro:focus-within {
+    border-color: #22c55e;
+}
+
+.icone_senha_registro{
+    font-size: 20px;
+
+    color: #59656e;
+}
+
+.input_senha_registro{
+    width: 100%;
+    height: 42px;
+
+    background-color: #f8fdfc;
+
+    border: 0;
+    outline: 0;
+
+    font-size: 14px;
+}
+
+.olho_senha_registro{
+    font-size: 20px;
+    
+    color: #59656e;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.olho_senha_registro:hover{
+    color: #22c55e;
+}
+
+.dashboard_senha {
+    max-width: 342px;
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #dee6e9;
+    border-radius: 12px;
+    background-color: #f9fcfc;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.conteiner_forca_senha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forca_senha {
+    font-size: 12px;
+    font-weight: 500;
+    color: oklch(0.5 0.02 240);
+}
+
+.condicoes_senha {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.min_8 {
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    color: oklch(0.45 0.02 240);
+}
+
+.uma_letra_minuscula{
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    color: oklch(0.45 0.02 240);
+}
+
+.uma_letra_maiuscula {
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    color: oklch(0.45 0.02 240);
+}
+
+.um_numero {
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    color: oklch(0.45 0.02 240);
+}
+
+.um_caractere_especial {
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    color: oklch(0.45 0.02 240);
+}
+
+.ok{
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    color: #22c55e;
+}
+
+.confirmar_senha{
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #131c23;
+
+    cursor: default;
+}
+
+.conteiner_input_senha_confirmar{
+    max-width: 342px;
+    width: 100%;
+    height: 44px;
+
+    border: 1px solid #dee6e9;
+    border-radius: 12px;
+
+    padding: 12px 12px;
+
+    background-color: #f8fdfc;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    transition: all 0.2s ease;
+}
+
+.conteiner_input_senha_confirmar:focus-within {
+    border-color: #22c55e;
+}
+
+.icone_senha_confirmar{
+    font-size: 20px;
+
+    color: #59656e;
+}
+
+.input_senha_confirmar{
+    width: 100%;
+    height: 42px;
+
+    background-color: #f8fdfc;
+
+    border: 0;
+    outline: 0;
+
+    font-size: 14px;
+}
+
+.olho_senha_confirmar{
+    font-size: 20px;
+    
+    color: #59656e;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.olho_senha_confirmar:hover{
+    color: #22c55e;
+}
+
+.btn_cadastrar_registro{
+    max-width: 342px;
+    width: 100%;
+    height: 42px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background-color: #00c4a2;
+
+    color: #f8fdfc;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 10px 16px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+    
+    transition: all 0.2s ease;
+}
+
+.btn_cadastrar_registro:hover{
+    cursor: pointer;
+
+    background-color: #00c4a3da;
+
+    transform: scale(1.02);
+}
+
+.btn_cadastrar_registro:active{
+    transform: scale(0.98);
+}
+
+hr{
+    border: 1px solid #dee6e9;
+}

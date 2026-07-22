@@ -1,0 +1,254 @@
+.nova_senha{
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #131c23;
+
+    cursor: default;
+}
+
+.conteiner_input_nova_senha{
+    max-width: 342px;
+    width: 100%;
+    height: 44px;
+
+    border: 1px solid #dee6e9;
+    border-radius: 12px;
+
+    padding: 12px 12px;
+
+    background-color: #f8fdfc;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    transition: all 0.2s ease;
+}
+
+.conteiner_input_nova_senha:focus-within {
+    border-color: #22c55e;
+}
+
+.icone_nova_senha{
+    font-size: 20px;
+
+    color: #59656e;
+}
+
+.input_nova_senha{
+    width: 100%;
+    height: 42px;
+
+    background-color: #f8fdfc;
+
+    border: 0;
+    outline: 0;
+
+    font-size: 14px;
+}
+
+.olho_nova_senha{
+    font-size: 20px;
+    
+    color: #59656e;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.olho_nova_senha:hover{
+    color: #22c55e;
+}
+
+.dashboard_redefirnir_senha {
+    max-width: 342px;
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #dee6e9;
+    border-radius: 12px;
+    background-color: #f9fcfc;
+
+    display: flex;
+    flex-direction: column;
+    
+    gap: 12px;
+}
+
+.conteiner_forca_redefinir_senha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forca_redefinir_senha {
+    font-size: 12px;
+    font-weight: 500;
+    color: oklch(0.5 0.02 240);
+}
+
+.condicoes_redefinir_senha {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.min_8 {
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    color: oklch(0.45 0.02 240);
+}
+
+.uma_letra_minuscula{
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    color: oklch(0.45 0.02 240);
+}
+
+.uma_letra_maiuscula {
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    color: oklch(0.45 0.02 240);
+}
+
+.um_numero {
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    color: oklch(0.45 0.02 240);
+}
+
+.um_caractere_especial {
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    color: oklch(0.45 0.02 240);
+}
+
+.ok{
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    color: #22c55e;
+}
+
+.confirmar_redefinicao_senha{
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #131c23;
+
+    cursor: default;
+}
+
+.conteiner_input_redefinicao_senha{
+    max-width: 342px;
+    width: 100%;
+    height: 44px;
+
+    border: 1px solid #dee6e9;
+    border-radius: 12px;
+
+    padding: 12px 12px;
+
+    background-color: #f8fdfc;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    transition: all 0.2s ease;
+}
+
+.conteiner_input_redefinicao_senha:focus-within {
+    border-color: #22c55e;
+}
+
+.icone_redefinicao_senha{
+    font-size: 20px;
+
+    color: #59656e;
+}
+
+.input_redefinicao_senha{
+    width: 100%;
+    height: 42px;
+
+    background-color: #f8fdfc;
+
+    border: 0;
+    outline: 0;
+
+    font-size: 14px;
+}
+
+.olho_redefinicao_senha{
+    font-size: 20px;
+    
+    color: #59656e;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.olho_redefinicao_senha:hover{
+    color: #22c55e;
+}
+
+.btn_redefinir_senha{
+    max-width: 342px;
+    width: 100%;
+    height: 42px;
+
+    border: 0;
+    border-radius: 10px;
+
+    background-color: #00c4a2;
+
+    color: #f8fdfc;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 10px 16px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+    
+    transition: all 0.2s ease;
+}
+
+.btn_redefinir_senha:hover{
+    cursor: pointer;
+
+    background-color: #00c4a3da;
+
+    transform: scale(1.02);
+}
+
+.btn_redefinir_senha:active{
+    transform: scale(0.98);
+}

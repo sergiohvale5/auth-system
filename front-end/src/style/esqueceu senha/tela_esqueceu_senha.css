@@ -1,0 +1,28 @@
+.conteiner_esqueceu_senha{
+    max-width: 400px;
+    width: 100%;
+    height: 335px;
+
+    border: 1px solid #dee6e9;
+    border-radius: 20px;
+
+    background-color: #fbfefd;
+
+    padding: 28px;
+}
+
+.conteiner_titulo_texto_esqueceu_senha{
+    cursor: default;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.texto_infome_email{
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #646f77;
+}

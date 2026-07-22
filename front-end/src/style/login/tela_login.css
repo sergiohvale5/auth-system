@@ -1,0 +1,88 @@
+.login{
+    max-width: 400px;
+    width: 100%;
+    height: 547px;
+
+    background-color: #fefffe;
+
+    border: 1px solid #dee6e9;
+    border-radius: 18px;
+
+    box-shadow: 0px 2px 7px #e3f5f1;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.conteiner_titulo_texto_login{
+    cursor: default;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.texto_acesse_sua_conta_login{
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #646f77;
+}
+
+.hr_ou_login{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    cursor: default;
+}
+
+.hr_ou_login hr{
+    max-width: 149.34px;
+    width: 100%;
+    height: 0px;
+
+    border: 1px solid #dee6e9;
+}
+
+.hr_ou_login p{
+    font-size: 12px;
+
+    color: #6a747c;
+}
+
+.container_cadastro{
+    font-size: 14px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 3px;
+}
+
+.nao_conta{
+    color: #5f6b73;
+
+    cursor: default;
+}
+
+.link_registro{
+    text-decoration: none;
+}
+
+.cadastro{
+    color: #00a380;
+    font-weight: 700;
+}
+
+.cadastro:hover{
+    cursor: pointer;
+
+    text-decoration: underline;
+}
