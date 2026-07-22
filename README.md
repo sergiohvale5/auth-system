@@ -99,8 +99,8 @@ CLIENTE_ID_GOOGLE=
 ```
 
 front-end
-front-end/src/config/env.example.ts
 
+```front-end/src/config/env.example.ts
 export const env = {
     api_url_registro: "",
     api_url_login: "",
@@ -110,6 +110,7 @@ export const env = {
     cliente_id_google: "",
     api_url_auth_google: ""
 };
+```
 
 ### Executar
 
