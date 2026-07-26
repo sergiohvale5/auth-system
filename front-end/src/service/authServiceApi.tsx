@@ -159,6 +159,13 @@ export const authGoogle = async (token: AuthGoogle) => {
 
         const retorno = await resposta.json();
 
+        if (!retorno.jwtToken) {
+            throw new Error("JWT não retornado pela API.");
+        }
+
+
+        localStorage.setItem("jwtToken", retorno.jwtToken)
+
         return retorno;
     }catch(err){
         console.error('Erro de atenticação via google', {
