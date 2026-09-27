@@ -14,9 +14,6 @@ coverage/
 # Variáveis de ambiente
 # ==========================
 .env
-.env.*
-!.env.example
-front-end/src/config/env.tsx
 
 # ==========================
 # Banco de dados
