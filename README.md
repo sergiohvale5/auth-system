@@ -100,17 +100,14 @@ CLIENTE_ID_GOOGLE=
 
 front-end
 
-```
-front-end/src/config/env.example.ts
-export const env = {
-    api_url_registro: "",
-    api_url_login: "",
-    api_url_redeficao_senha: "",
-    api_url_atualizar_senha: "",
-    api_url_dadosUser: "",
-    cliente_id_google: "",
-    api_url_auth_google: ""
-};
+``` env
+VITE_API_URL_REGISTRO=
+VITE_API_URL_LOGIN=
+VITE_API_URL_REDEFINICAO_SENHA=
+VITE_API_URL_ATUALIZAR_SENHA=
+VITE_API_URL_DADOSUSER=
+VITE_CLIENTE_ID_GOOGLE=
+VITE_URL_AUTH_GOOGLE=
 ```
 
 ### Executar
