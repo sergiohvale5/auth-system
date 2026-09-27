@@ -7,6 +7,8 @@ import { authGoogle } from '../../service/authServiceApi';
 
 function Auth_Google_Login(){
     const [token, setToken] = useState<string>("");
+    const [sucesso, setSucesso] = useState<string>("");
+    const [error, setError] = useState<string>("");
 
     useEffect(() => {
         if(!token) return;
@@ -14,16 +16,22 @@ function Auth_Google_Login(){
         async function enviarTokenGoogle() {
             try{
                 await authGoogle(
-                {
-                    token
-                }
-            )
+                    {
+                        token
+                    }
+                )
 
-            alert("Login realizado com sucesso");
+                setSucesso("Login realizado com sucesso")
+                
+                setTimeout(() => {
+                    setSucesso("");
+                }, 3000);
             }catch(err){
-                alert(
-                    "Erro de login com o Google"
-                );
+                setError("Erro de login com o Google");
+
+                setTimeout(() => {
+                    setError("");
+                }, 3000);
 
                 console.error("Erro de login com o Google", {
                     error: err
@@ -36,6 +44,22 @@ function Auth_Google_Login(){
 
     return(
         <div className='btn_auth_google_login'>
+            {
+                sucesso && (
+                    <div className='notificacao_sucesso'>
+                        {sucesso}
+                    </div>
+                )
+            }
+
+            {
+                error && (
+                    <div className='notificacao_error'>
+                        {error}
+                    </div>
+                )
+            }
+
             <GoogleOAuthProvider clientId={env.cliente_id_google}>
                 <GoogleLogin 
                     text='signup_with'

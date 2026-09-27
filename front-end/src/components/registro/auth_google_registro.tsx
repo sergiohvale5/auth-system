@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 function Auth_Google_Registro(){
     const [token, setToken] = useState<string>("");
+    const [sucesso, setSucesso] = useState<string>("");
+    const [error, setError] = useState<string>("");
 
     const navigate = useNavigate();
 
@@ -16,18 +18,24 @@ function Auth_Google_Registro(){
         async function enviarTokenGoogle() {
             try{
                 await authGoogle(
-                {
-                    token
-                }
-            )
+                    {
+                        token
+                    }
+                )
 
-            alert("Cadastro realizado com sucesso");
+                setSucesso("Cadastro realizado com sucesso")
+                
+                setTimeout(() => {
+                    setSucesso("");
 
-            navigate("/");
+                    navigate("/");
+                }, 1500);
             }catch(err){
-                alert(
-                    "Erro de cadastro com o Google"
-                );
+                setError("Erro de cadastro com o Google");
+
+                setTimeout(() => {
+                    setError("");
+                }, 3000);
 
                 console.error("Erro de cadastro com o Google", {
                     error: err
@@ -40,6 +48,22 @@ function Auth_Google_Registro(){
 
     return(
         <div className='btn_auth_google_registro'>
+            {
+                sucesso && (
+                    <div className='notificacao_sucesso'>
+                        {sucesso}
+                    </div>
+                )
+            }
+
+            {
+                error && (
+                    <div className='notificacao_error'>
+                        {error}
+                    </div>
+                )
+            }
+
             <GoogleOAuthProvider clientId={env.cliente_id_google}>
                 <GoogleLogin 
                     text='signup_with'

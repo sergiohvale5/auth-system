@@ -10,15 +10,28 @@ function Auth_Formulario_Login(){
     const [email, setEmail] = useState<string>("");
     const [senha, setSenha] = useState<string>("");
     const [mostrarSenha, setMostrarSenha] = useState<boolean>(false);
+    const [sucesso, setSucesso] = useState<string>("");
+    const [alerta, setAlerta] = useState<string>("");
+    const [error, setError] = useState<string>("");
 
     async function loginUser() {
         switch (true) {
             case !email:
-                alert("Email obrigatório");
+                setAlerta("Email obrigatório");
+                
+                setTimeout(() => {
+                    setAlerta("");
+                }, 3000);
+
                 return;
 
             case !senha:
-                alert("Senha obrigatória");
+                setAlerta("Senha obrigatória");
+                
+                setTimeout(() => {
+                    setAlerta("");
+                }, 3000);
+
                 return;
         }
 
@@ -31,15 +44,50 @@ function Auth_Formulario_Login(){
             setEmail("");
             setSenha("");
 
-            alert("Usuário logado");
-        } catch (error) {
-            console.error(error);
-            alert("Email ou senha incorretos");
+            setSucesso("Usuário logado");
+
+            setTimeout(() => {
+                setSucesso("");
+            }, 3000);
+        } catch (err) {
+            console.error(err);
+
+            setError("Email ou senha incorretos");
+
+            setTimeout(() => {
+                setError("");
+            }, 3000);
+
+            throw err;
         }
     }
 
     return(
         <div className='conateiner_formulario_login'>
+            {
+                sucesso && (
+                    <div className='notificacao_sucesso'>
+                        {sucesso}
+                    </div>
+                )
+            }
+
+            {
+                alerta && (
+                    <div className='notificacao_alerta'>
+                        {alerta}
+                    </div>
+                )
+            }
+
+            {
+                error && (
+                    <div className='notificacao_error'>
+                        {error}
+                    </div>
+                )
+            }
+
             <p className='email_login'>E-mail</p>
 
             <div className='conteiner_input_email_login'>

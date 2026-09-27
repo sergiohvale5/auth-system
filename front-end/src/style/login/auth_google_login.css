@@ -36,3 +36,73 @@
 .btn_auth_google_login:active{
     transform: scale(0.98);
 }
+
+.notificacao_sucesso {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background-color: #ffffff;
+    color: #2e7d32;
+
+    border: 1px solid #2e7d32;
+    border-radius: 8px;
+
+    padding: 14px 20px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+    z-index: 9999;
+
+    animation: aparecerNotificacaoSucesso 0.3s ease;
+}
+
+@keyframes aparecerNotificacaoSucesso {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.notificacao_error {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background-color: #ffffff;
+    color: #d32f2f;
+
+    border: 1px solid #d32f2f;
+    border-radius: 8px;
+
+    padding: 14px 20px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+    z-index: 9999;
+
+    animation: aparecerNotificacaoError 0.3s ease;
+}
+
+@keyframes aparecerNotificacaoError {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -15,6 +15,9 @@ function Auth_Formulario_Registro(){
     const [ confirmarSenha, setConfirmarSenha ] = useState<string>("");
     const [ mostrarSenha, setMostrarSenha ] = useState<boolean>(false);
     const [ mostrarSenhaConfirmar, setMostrarSenhaConfirmar ] = useState<boolean>(false);
+    const [sucesso, setSucesso] = useState<string>("");
+    const [alerta, setAlerta] = useState<string>("");
+    const [error, setError] = useState<string>("");
 
     const navigate = useNavigate();
 
@@ -32,42 +35,95 @@ function Auth_Formulario_Registro(){
 
         switch(true){
             case !nome:
-                alert("Nome obrigatório");
+                setAlerta("Nome obrigatório");
+                
+                setTimeout(() => {
+                    setAlerta("");
+                }, 3000);
             break;
 
             case !email:
-                alert("Email obrigatório");
+                setAlerta("Email obrigatório");
+                
+                setTimeout(() => {
+                    setAlerta("");
+                }, 3000);
             break;
 
             case !senhaValida:
-                alert("Senha inválida");
+                setAlerta("Senha inválida");
+                
+                setTimeout(() => {
+                    setAlerta("");
+                }, 3000);
             break;
 
             case !senhaConfirmada:
-                alert("A confirmação da senha está incorreta");
+                setAlerta("A confirmação da senha está incorreta");
+                
+                setTimeout(() => {
+                    setAlerta("");
+                }, 3000);
             return;
         }
 
-        const credenciais: CredenciaisRegistro = {
-            nome,
-            email,
-            senha
+        try{
+            const credenciais: CredenciaisRegistro = {
+                nome,
+                email,
+                senha
+            }
+
+            await authRegistro(credenciais);
+
+            setNome("");
+            setEmail("");
+            setSenha("");
+            setConfirmarSenha("");
+
+            setSucesso("Usuário registrado");
+            
+            setTimeout(() => {
+                setSucesso("");
+
+                navigate("/");
+            }, 1500);
+        }catch(err){
+            setError("Erro ao registrar-se");
+
+            setTimeout(() => {
+                setError("");
+            }, 3000);
+
+            throw err;
         }
-
-        await authRegistro(credenciais);
-
-        setNome("");
-        setEmail("");
-        setSenha("");
-        setConfirmarSenha("");
-
-        alert("Usuário registrado");
-
-        navigate("/");
     }
-
     return(
         <div className='conateiner_formulario_registro'>
+            {
+                sucesso && (
+                    <div className="notificacao_sucesso">
+                        {sucesso}
+                    </div>
+                )
+            }
+
+            {
+                alerta && (
+                    <div className="notificacao_alerta">
+                        {alerta}
+                    </div>
+                )
+            }
+
+            {
+                error && (
+                    <div className="notificacao_error">
+                        {error}
+                    </div>
+                )
+            }
+
             <p className='nome_registro'>Nome</p>
 
             <div className='conteiner_input_nome_registro'>

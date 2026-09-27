@@ -154,11 +154,7 @@ export const postAuthGoogleController = async (req: Request, res: Response) => {
 
         const resposta = await postAuthGoogleService(token);
 
-        return res.status(200).json(
-            {
-                resposta
-            }
-        )
+        return res.status(200).json(resposta)
     }catch(err){
         logger.info("Erro de autenticação com o google do usuário no servidor", {
             error: err

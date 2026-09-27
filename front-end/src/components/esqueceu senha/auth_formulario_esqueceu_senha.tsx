@@ -6,12 +6,20 @@ import { useNavigate } from "react-router-dom";
 
 function Auth_Formulario_Esqueceu_Senha(){
     const [email, setEmail] = useState<string>("");
+    const [sucesso, setSucesso] = useState<string>("");
+    const [alerta, setAlerta] = useState<string>("");
+    const [error, setError] = useState<string>("");
 
     const navigate = useNavigate();
 
     async function redefinicaoSenha(){
         if(!email){
-            alert("Campo obrigatório");
+            setAlerta("Campo obrigatório");
+
+            setTimeout(() => {
+                setAlerta("");
+            }, 3000);
+
             return;
         }
 
@@ -26,17 +34,52 @@ function Auth_Formulario_Esqueceu_Senha(){
 
             setEmail("");
 
-            alert("Se existir uma conta vinculada a este e-mail, enviaremos um link para redefinição de senha. Verifique sua caixa de entrada ou spam.");
+            setSucesso("Se existir uma conta vinculada a este e-mail, enviaremos um link para redefinição de senha. Verifique sua caixa de entrada ou spam.");
 
-            navigate("/");
+            setTimeout(() => {
+                setSucesso("");
+
+                navigate("/");
+            }, 1500);
         }catch(err){
             console.error(err);
-            alert("Email incorreto")
+
+            setError("Email incorreto");
+
+            setTimeout(() => {
+                setError("");
+            }, 3000);
+
+            throw err;
         }
     }
 
     return(
         <>
+            {
+                sucesso && (
+                    <div className="notificacao_sucesso">
+                        {sucesso}
+                    </div>
+                )
+            }
+
+            {
+                alerta && (
+                    <div className="notificacao_alerta">
+                        {alerta}
+                    </div>
+                )
+            }
+
+            {
+                error && (
+                    <div className="notificacao_error">
+                        {error}
+                    </div>
+                )
+            }
+
             <p className='email_esqueceu_senha'>E-mail</p>
             
             <div className='conteiner_input_email_esqueceu_senha'>

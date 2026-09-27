@@ -11,6 +11,9 @@ function Auth_Formulario_Redefinir_Senha(){
     const [ confirmarSenha, setConfirmarSenha ] = useState<string>("");
     const [ mostrarSenha, setMostrarSenha ] = useState<boolean>(false);
     const [ mostrarSenhaConfirmar, setMostrarSenhaConfirmar ] = useState<boolean>(false);
+    const [sucesso, setSucesso] = useState<string>("");
+    const [alerta, setAlerta] = useState<string>("");
+    const [error, setError] = useState<string>("");
 
     const requisitos_senha = {
         tamanho: senha.length >= 8,
@@ -27,13 +30,23 @@ function Auth_Formulario_Redefinir_Senha(){
     async function userDados() {
         try{
             if (!email) {
-                alert("Erro ao atualizar senha");
+                setAlerta("Erro ao atualizar senha");
+
+                setTimeout(() => {
+                    setAlerta("");
+                }, 3000);
+
                 throw new Error("E-mail não encontrado no localStorage.");
             }
 
             return await dadosUser({email})
         }catch(err){
-            alert("Erro ao redefinir senha");
+            setError("Erro ao redefinir senha");
+
+            setTimeout(() => {
+                setError("");
+            }, 3000);
+
             throw err;
         }
     }
@@ -41,11 +54,21 @@ function Auth_Formulario_Redefinir_Senha(){
     async function redefinirSenha(id: number) {
         switch(true){
             case !senha:
-                alert("Preenchimento do campo obrigatório");
+                setAlerta("Preenchimento do campo obrigatório");
+
+                setTimeout(() => {
+                    setAlerta("");
+                }, 3000);
+
                 return
 
             case !confirmarSenha:
-                alert("Preenchimento do campo obrigatório");
+                setAlerta("Preenchimento do campo obrigatório");
+
+                setTimeout(() => {
+                    setAlerta("");
+                }, 3000);
+
                 return
         }
 
@@ -61,17 +84,50 @@ function Auth_Formulario_Redefinir_Senha(){
             setSenha("");
             setConfirmarSenha("");
 
-            alert("Senha atualizada");
+            setSucesso("Senha atualizada");
 
-            navegate("/");
+            setTimeout(() => {
+                setSucesso("");
+
+                navegate("/");
+            }, 1500);
         }catch(err){
-            alert("Erro ao atualizar senha");
+            setError("Erro ao atualizar senha");
+
+            setTimeout(() => {
+                setError("");
+            }, 3000);
+
             throw err;
         }
     }
 
     return(
         <>
+            {
+                sucesso && (
+                    <div className="notificacao_sucesso">
+                        {sucesso}
+                    </div>
+                )
+            }
+
+            {
+                alerta && (
+                    <div className="notificacao_alerta">
+                        {alerta}
+                    </div>
+                )
+            }
+
+            {
+                error && (
+                    <div className="notificacao_error">
+                        {error}
+                    </div>
+                )
+            }
+
             <p className='nova_senha'>Nova senha</p>
 
             <div className='conteiner_input_nova_senha'>
